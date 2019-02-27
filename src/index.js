@@ -1,1 +1,1 @@
-export { default } from './components/vue-drag.vue'
+export { default } from './components/vue-easy-drag.vue'
