@@ -1,14 +1,6 @@
 const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
-    pages: {
-        index: {
-            entry: './src',
-        },
-        demo: {
-            entry: './src/demo/app.js',
-        }
-    },
     devServer: {
         open: true,
         host: '0.0.0.0',
@@ -21,6 +13,11 @@ module.exports = {
         if (process.env.NODE_ENV === 'production') {
             // 为生产环境修改配置
             return {
+                devtool: false,
+                entry: './src/index.js',
+                /*     index: './src/index.js',
+                    demo: './src/demo/app.js',
+                },  */
                 plugins: [
                     new CompressionPlugin({
                         test: /\.js$|\.css$|\.html$/,
@@ -34,7 +31,10 @@ module.exports = {
                     }),
                 ],
                 output: {
-                    filename: '[name].js',
+                    filename: 'index.js',
+                    library: 'vue-easy-drag',
+                    libraryTarget: 'umd',
+                    umdNamedDefine: true
                 },
             }
         } else {

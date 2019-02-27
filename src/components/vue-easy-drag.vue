@@ -1,15 +1,22 @@
 <template>
-    <div id="box" @click="boxClick"></div>
+    <div id="box" @click="boxClick">
+        <p>{{text}}</p>
+    </div>
 </template>
 
 <script>
 export default {
+    data() {
+        return {
+            text: '',
+        }
+    },
     created() {
         
     },
     methods: {
         boxClick() {
-            console.log('恭喜发财！');
+            this.text = '恭喜发财！';
         }
     }
 }
