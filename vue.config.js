@@ -32,9 +32,6 @@ module.exports = {
                 ],
                 output: {
                     filename: 'index.js',
-                    library: 'vue-easy-drag',
-                    libraryTarget: 'umd',
-                    umdNamedDefine: true
                 },
             }
         } else {

@@ -2,9 +2,10 @@
   "name": "vue-easy-drag",
   "version": "0.1.3",
   "license": "MIT",
+  "main": "dist/index.js",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name ts-vue src/index.js",
+    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
