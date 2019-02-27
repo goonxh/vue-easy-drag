@@ -9,6 +9,8 @@ module.exports = {
         https: false,
         hotOnly: false,
     },
+    productionSourceMap: false,
+    filenameHashing: false,
     configureWebpack: config => {
         if (process.env.NODE_ENV === 'production') {
             // 为生产环境修改配置
@@ -19,23 +21,17 @@ module.exports = {
                     demo: './src/demo/app.js',
                 },  */
                 plugins: [
-                    new CompressionPlugin({
-                        test: /\.js$|\.css$|\.html$/,
-                        // cache: true,
-                        // asset: '[path].gz[query]',
-                        algorithm: 'gzip',
-                        threshold: 0,
-                        minRatio: 0.8,
-                        // 压缩完成后是否删除源文件,
-                        deleteOriginalAssets: false,
-                    }),
                 ],
                 output: {
                     filename: 'index.js',
+                    library: 'VueEasyDrag',
+                    libraryTarget: 'umd'
                 },
             }
         } else {
-            // 为开发环境修改配置
+            return {
+                entry: './src/demo/app.js',
+            }
         }
     },
     css: {
