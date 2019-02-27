@@ -3,8 +3,10 @@ const CompressionPlugin = require('compression-webpack-plugin');
 module.exports = {
     pages: {
         index: {
+            entry: './src',
+        },
+        demo: {
             entry: './src/demo/app.js',
-            
         }
     },
     devServer: {
@@ -30,7 +32,10 @@ module.exports = {
                         // 压缩完成后是否删除源文件,
                         deleteOriginalAssets: false,
                     }),
-                ]
+                ],
+                output: {
+                    filename: '[name].js',
+                },
             }
         } else {
             // 为开发环境修改配置

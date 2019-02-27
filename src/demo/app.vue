@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import vueDrag from '../components/vue-drag.vue';
+import vueDrag from '../components/vue-easy-drag.vue';
 export default {
     name: 'app',
     components: {
