@@ -2,7 +2,8 @@
     <div id="app">
         <vue-easy-drag :w="100"
                        :h="100"
-                       :t="250">
+                       :l="50"
+                       :t="50">
         </vue-easy-drag>
     </div>
 </template>
@@ -24,6 +25,7 @@ export default {
     border: 1px solid #111;
     position: relative;
     padding: 20px;
+    margin: 50px;
     .dragBox{
         border-radius: 50%;
         background-color: #123456;

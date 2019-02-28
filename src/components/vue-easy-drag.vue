@@ -52,20 +52,20 @@
         },
         watch: {
             moveX() {
-                this.left = this.moveX - this.diffX;
-                if (this.left > this.parentWidth-this.width) {
-                    this.left = this.parentWidth-this.width;
+                this.left = this.moveX - this.diffX - this.parentX;
+                if (this.left > this.parentWidth - this.width) {
+                    this.left = this.parentWidth - this.width;
                 }
-                if (this.left < this.parentX) {
+                if (this.left <= 0) {
                     this.left = 0;
                 }
             },
             moveY() {
-                this.top = this.moveY - this.diffY;
-                if (this.top > this.parentHeight-this.height) {
-                    this.top = this.parentHeight-this.height;
+                this.top = this.moveY - this.diffY - this.parentY;
+                if (this.top > this.parentHeight - this.height) {
+                    this.top = this.parentHeight - this.height;
                 }
-                if (this.top < this.parentY) {
+                if (this.top <= 0) {
                     this.top = 0;
                 }
             }
@@ -122,7 +122,7 @@
                 this.eY = e.target.getBoundingClientRect().top;
                 this.startX = this.getMousePos().x;
                 this.startY = this.getMousePos().y;
-                console.log(this.eX, this.startX);
+                console.log(this.startX, this.eX);
             },
             mouseMove() {
                 if (this.press) {
