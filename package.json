@@ -1,9 +1,12 @@
 {
   "name": "vue-easy-drag",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "MIT",
   "main": "src/index.js",
-  "keywords": ["vue", "drag"],
+  "keywords": [
+    "vue",
+    "drag"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
