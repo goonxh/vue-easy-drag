@@ -25,8 +25,8 @@
                 startY: 0,
                 eX: 0,
                 eY: 0,
-                parentWidth: this.pw,
-                parentHeight: this.ph,
+                parentWidth: 0,
+                parentHeight: 0,
                 parentX: null,
                 parentY: null
             };
@@ -52,14 +52,6 @@
                 type: [String, Number],
                 default: "auto"
             },
-            pw: {
-                type: Number,
-                default: 0,
-            },
-            ph: {
-                type: Number,
-                default: 0,
-            }
         },
         watch: {
             moveX() {
@@ -129,7 +121,6 @@
         created() {
             window.onresize = () => {
                 this.getParentElement();
-                this.$emit('windowResize', this.parentWidth, this.parentY);
             };
         },
         mounted() {

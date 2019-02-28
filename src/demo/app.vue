@@ -24,7 +24,6 @@
                        :t="250"
                        :pw="pw"
                        :ph="ph"
-                       @windowResize="windowResize"
                        onselectstart="return false;">
             <div>#3</div>
         </vue-easy-drag>
@@ -45,11 +44,10 @@
         components: {
             vueEasyDrag,
         },
+        created() {
+
+        },
         methods: {
-            windowResize(pw, ph) {
-                this.pw = pw;
-                this.ph = ph;
-            }
         }
     }
 </script>
