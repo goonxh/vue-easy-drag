@@ -97,6 +97,18 @@
             };
             window.onresize = () => {
                 this.getParentElement();
+                if(this.left + this.width > this.parentWidth+this.parentX) {
+                    this.left = this.parentWidth-this.width;
+                }
+                if(this.top + this.height > this.parentHeight+this.parentY) {
+                    this.top = this.parentHeight-this.height;
+                }
+                if(this.parentWidth<this.width) {
+                    this.left = 0;
+                }
+                if(this.parentHeight<this.height) {
+                    this.top = 0;
+                }
             };
         },
         mounted() {
@@ -124,10 +136,10 @@
             },
             getParentElement() {
                 console.log(this.$el.parentNode.getBoundingClientRect());
-                this.parentWidth = this.$el.parentNode.getBoundingClientRect().width;
-                this.parentHeight = this.$el.parentNode.getBoundingClientRect().height;
-                this.parentX = this.$el.parentNode.getBoundingClientRect().x;
-                this.parentY = this.$el.parentNode.getBoundingClientRect().y;
+                this.parentWidth = this.$el.parentNode.clientWidth;
+                this.parentHeight = this.$el.parentNode.clientHeight;
+                this.parentX = this.$el.parentNode.getBoundingClientRect().left;
+                this.parentY = this.$el.parentNode.getBoundingClientRect().top;
             }
         }
     };
