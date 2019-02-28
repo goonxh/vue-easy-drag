@@ -19,8 +19,9 @@ export default {
 
 <style lang="scss">
 #app{
-    width: 100vh;
-    height: 98vh;
+    width: 50vw;
+    height: 50vh;
+    border: 1px solid #111;
     position: relative;
     .dragBox{
         border-radius: 50%; 
