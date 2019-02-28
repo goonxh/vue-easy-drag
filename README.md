@@ -1,29 +1,8 @@
-# vue-drag
+# vue-easy-drag
 
-## Project setup
-```
-npm install
-```
+    npm i --save vue-easy-drag
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### In your project:
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+    import vueEasyDrag from 'vue-easy-drag';
+    Vue.component('vue-easy-drag', vueEasyDrag);
