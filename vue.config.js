@@ -1,4 +1,5 @@
-const CompressionPlugin = require('compression-webpack-plugin');
+// const CompressionPlugin = require('compression-webpack-plugin');
+const path = require('path');
 
 module.exports = {
     devServer: {
@@ -9,6 +10,8 @@ module.exports = {
         https: false,
         hotOnly: false,
     },
+    outputDir: path.resolve(__dirname, 'docs'),
+    publicPath: './',
     productionSourceMap: false,
     filenameHashing: false,
     configureWebpack: config => {
@@ -16,16 +19,11 @@ module.exports = {
             // 为生产环境修改配置
             return {
                 devtool: false,
-                entry: './src/index.js',
-                /*     index: './src/index.js',
-                    demo: './src/demo/app.js',
-                },  */
+                entry: './src/demo/app.js',
                 plugins: [
                 ],
                 output: {
                     filename: 'index.js',
-                    library: 'VueEasyDrag',
-                    libraryTarget: 'umd'
                 },
             }
         } else {
